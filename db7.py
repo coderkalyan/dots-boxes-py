@@ -19,7 +19,7 @@ import sys
 from collections import namedtuple
 from time import sleep
 from random import choice
-import builtins
+from builtins import input
 
 BOARDSIZE = 4
 
@@ -321,11 +321,8 @@ def get_best_move(possible):
                 return p_move
     
         # last resort: just pick a random move
-        try:
-            return choice(removed)
-        except IndexError:
-            input("Waiting for debug...")
-
+        return choice(removed)
+        
 def decide_and_move():
     # randomly pick a valid move
     possible = possible_moves()
